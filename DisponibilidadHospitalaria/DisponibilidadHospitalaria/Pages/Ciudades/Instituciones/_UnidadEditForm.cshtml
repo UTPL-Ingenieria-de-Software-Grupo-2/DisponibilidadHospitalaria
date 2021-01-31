@@ -1,0 +1,78 @@
+﻿@model UnidadCreateUpdate.RequestModel
+
+@{
+    var tiposDeUnidad = (List<TipoDeUnidadDto>)ViewData["TiposDeUnidad"];
+    var institucion = (InstitucionDto)ViewData["Institucion"];
+}
+
+<form method="post" autocomplete="off">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="InstitucionId" />
+
+    <div class="form-group row">
+        <div class="col-2 col-form-label text-md-right text-sm-left">
+            Ciudad:
+        </div>
+        <div class="col-sm-10">
+            <span class="form-control">@institucion.Ciudad</span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-2 col-form-label text-md-right text-sm-left">
+            Provincia:
+        </div>
+        <div class="col-sm-10">
+            <span class="form-control">@institucion.Provincia</span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-2 col-form-label text-md-right text-sm-left">
+            Institución:
+        </div>
+        <div class="col-sm-10">
+            <span class="form-control">@institucion.Nombre</span>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Nombre:</label>
+        <div class="col-sm-10">
+            <input asp-for="Denominacion" class="form-control">
+            <span asp-validation-for="Denominacion" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Provincia:</label>
+        <div class="col-sm-10">
+            <select id="pais" asp-for="TipoDeUnidadId" class="form-control">
+                @foreach (var item in tiposDeUnidad.OrderBy(x => x.Denominacion).ToList())
+                {
+                    <option value="@item.Id">@item.Denominacion</option>
+                }
+            </select>
+            <span asp-validation-for="TipoDeUnidadId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Capacidad:</label>
+        <div class="col-sm-10">
+            <input asp-for="Capacidad" class="form-control w-auto">
+            <span asp-validation-for="Capacidad" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger offset-sm-2"></div>
+
+    <div class="form-group row mt-3">
+        <div class="col-sm-10 offset-sm-2">
+            <div class="d-flex flex-row">
+                <input class="btn btn-primary" type="submit" value="Guardar" />
+                <a class="btn btn-outline-info ml-3" asp-page="./Index" asp-route-ciudadId="@institucion.CiudadId">Regresar</a>
+            </div>
+        </div>
+    </div>
+</form>

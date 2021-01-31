@@ -50,7 +50,27 @@ namespace DisponibilidadHospitalaria
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddRazorPages();
+            /*
+                services.AddAuthorization(options =>
+                {
+                    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+                        .RequireAuthenticatedUser()
+                        .Build();
+                });
+            */
+
+            services.AddRazorPages()
+                .AddFluentValidation(cfg =>
+                {
+                    cfg.RegisterValidatorsFromAssembly(typeof(Aplicacion.AppException).Assembly);
+                    cfg.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+                    cfg.ImplicitlyValidateChildProperties = true;
+                    cfg.ImplicitlyValidateRootCollectionElements = true;
+                });
+
+            services.AddMediatR(typeof(Aplicacion.AppException).Assembly);
+
+            services.AddAutoMapper(typeof(Aplicacion.AppException).Assembly);
 
             services.RegisterFromAssemblies(Configuration);
         }

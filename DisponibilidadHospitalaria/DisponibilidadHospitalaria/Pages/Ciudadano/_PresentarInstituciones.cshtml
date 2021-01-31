@@ -1,0 +1,12 @@
+﻿@model CiudadDto
+@{
+}
+
+<div>
+    <table class="table table-sm">
+        @foreach (var item in Model.Instituciones.Where(x => x.Unidades.Count() > 0).ToList())
+        {
+            <partial name="Ciudadano/_PresentarInstitucion" model="@item" />
+        }
+    </table>
+</div>

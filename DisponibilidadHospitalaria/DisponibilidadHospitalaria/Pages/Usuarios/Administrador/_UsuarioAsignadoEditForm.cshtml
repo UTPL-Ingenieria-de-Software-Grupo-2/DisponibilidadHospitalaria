@@ -1,0 +1,83 @@
+﻿@model UsuarioAsignadoCreateUpdate.RequestModel
+@{
+    var provincias = (List<ElgirInstitucionVM.Provincia>)ViewData["Provincias"];
+    var ciudades = (List<ElgirInstitucionVM.Ciudad>)ViewData["Ciudades"];
+    var instituciones = (List<ElgirInstitucionVM.Institucion>)ViewData["Instituciones"];
+}
+
+<form method="post" autocomplete="off">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Provincia:</label>
+        <div class="col-sm-8">
+            <select id="provincia" asp-for="ProvinciaId" class="form-control">
+                @foreach (var item in provincias.OrderBy(x => x.Codigo).ToList())
+                {
+                    <option value="@item.Id">@item.NombreLista</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Ciudad:</label>
+        <div class="col-sm-8">
+            <select id="ciudad" asp-for="CiudadId" class="form-control">
+                @foreach (var item in ciudades.OrderBy(x => x.Nombre).ToList())
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Institución:</label>
+        <div class="col-sm-8">
+            <select id="institucion" asp-for="InstitucionId" class="form-control">
+                @foreach (var item in instituciones.OrderBy(x => x.Nombre).ToList())
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+            <span asp-validation-for="InstitucionId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Nombre:</label>
+        <div class="col-sm-8">
+            <input asp-for="Nombre" class="form-control">
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Email:</label>
+        <div class="col-sm-8">
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label text-md-right text-sm-left">Activo:</label>
+        <div class="col-sm-10">
+            <div class="checkbox mt-2">
+                <label><input type="checkbox" asp-for="Activo" class="mx-2"></label>
+            </div>
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger offset-sm-2"></div>
+
+    <div class="form-group row mt-3">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="d-flex flex-row">
+                <input class="btn btn-primary" type="submit" value="Guardar" />
+                <a class="btn btn-outline-info ml-3" href="./Index">Regresar</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+﻿@page
+@model DisponibilidadHospitalaria.Pages.Ciudades.Instituciones.EditarInstitucionModel
+@{
+    ViewData["Title"] = "Editar Institución";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item"><a asp-page="../Index">Ciudades</a></li>
+        <li class="breadcrumb-item"><a asp-page="./Index" asp-route-ciudadId="@Model.Ciudad.Id">Instituciones</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="text-center">
+    <h3 class="display-4">@ViewData["Title"]</h3>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8">
+        <div>
+            <partial name="_InstitucionEditForm" model="@Model.Input" view-data="ViewData" />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

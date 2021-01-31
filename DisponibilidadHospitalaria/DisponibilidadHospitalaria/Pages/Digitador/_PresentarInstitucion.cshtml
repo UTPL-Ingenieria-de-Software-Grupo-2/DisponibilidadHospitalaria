@@ -1,0 +1,24 @@
+﻿@model InstitucionDto
+
+@{
+}
+
+<tr>
+    <td class="bg-info text-white" colspan="7">
+        <span>@Model.Nombre</span>
+    </td>
+</tr>
+@foreach (var item in Model.Unidades)
+{
+    <tr>
+        <td width="35px"></td>
+        <td><span>@item.Denominacion</span></td>
+        <td>@item.TipoDeUnidad</td>
+        <td>@item.UltimaDisponibilidad?.Fecha.ToString("yyyy/MM/dd HH:MM:ss")</td>
+        <td>@item.UltimaDisponibilidad?.Ocupadas</td>
+        <td>@item.UltimaDisponibilidad?.Disponibles</td>
+        <td>
+            <a class="btn btn-sm btn-link" asp-page="./CrearEditarDisponibilidad" asp-route-unidadId="@item.Id">Actualizar</a>
+        </td>
+    </tr>
+}

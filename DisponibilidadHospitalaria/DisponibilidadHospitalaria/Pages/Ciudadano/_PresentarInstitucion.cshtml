@@ -1,0 +1,22 @@
+﻿@model InstitucionDto
+
+@{
+}
+
+<tr>
+    <td class="bg-info text-white" colspan="4">
+        <span>@Model.Nombre</span>
+    </td>
+</tr>
+@foreach (var item in Model.Unidades)
+{
+    var disponibles = item.Capacidad - item.UltimaDisponibilidad.Ocupadas;
+    <tr>
+        <td width="35px"></td>
+        <td><span>@item.Denominacion</span></td>
+        <td>@item.TipoDeUnidad</td>
+        <td>
+            <span class="badge badge-primary badge-pill">@disponibles</span>
+        </td>
+    </tr>
+}

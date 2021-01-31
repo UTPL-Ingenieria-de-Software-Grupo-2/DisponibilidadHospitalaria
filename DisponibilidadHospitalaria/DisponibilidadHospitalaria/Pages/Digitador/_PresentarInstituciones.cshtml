@@ -1,0 +1,22 @@
+﻿@model DisponibilidadHospitalaria.Pages.Digitador.IndexModel
+@{
+}
+
+<div>
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th colspan="2">Nombre</th>
+                <th>Tipo de Unidad</th>
+                <th>Fecha</th>
+                <th>Ocupades</th>
+                <th>Disponibles</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Instituciones.Where(x => x.Unidades.Count() > 0).ToList())
+        {
+            <partial name="./_PresentarInstitucion" model="@item" />
+        }
+    </table>
+</div>
