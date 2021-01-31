@@ -1,0 +1,44 @@
+﻿@page
+@model DisponibilidadHospitalaria.Pages.Ciudades.IndexModel
+@{
+    ViewData["Title"] = "Ciudades";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="text-center">
+    <h3 class="display-4">@ViewData["Title"]</h3>
+</div>
+
+<div>
+    <a class="btn btn-primary btn-sm" title="Agregar nuevo registro" asp-page="./CrearCiudad">Agregar</a>
+</div>
+<div>
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>Ciudad</th>
+                <th>Provincia</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Ciudades.OrderBy(x => x.Provincia_Nombre).ThenBy(x => x.Nombre).ToList())
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Provincia_Nombre</td>
+                <td>
+                    <a class="btn btn-link" asp-page="./EditarCiudad" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-link" asp-page="./Instituciones/Index" asp-route-ciudadId="@item.Id">Instituciones</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

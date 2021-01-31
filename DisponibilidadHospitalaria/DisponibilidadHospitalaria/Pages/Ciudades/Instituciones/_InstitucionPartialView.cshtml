@@ -1,0 +1,25 @@
+﻿@model InstitucionDto
+
+@{
+}
+
+<tr>
+    <td colspan="4">
+        <span>@Model.Nombre</span>
+    </td>
+    <td><a class="btn btn-sm btn-link" asp-route-id="@Model.Id" asp-page="./EditarInstitucion">Editar</a></td>
+    <td><a class="btn btn-sm btn-link" asp-route-institucionId="@Model.Id" asp-page="./CrearUnidad">Agregar Unidad</a></td>
+</tr>
+@foreach (var item in Model.Unidades)
+{
+    <tr>
+        <td width="35px"></td>
+        <td><span>@item.Denominacion</span></td>
+        <td>@item.TipoDeUnidad</td>
+        <td align="center">@item.Capacidad</td>
+        <td>
+            <a class="btn btn-sm btn-link" asp-page="./EditarUnidad" asp-route-institucionId="@item.InstitucionId" asp-route-id="@item.Id">Editar</a>
+        </td>
+        <td></td>
+    </tr>
+}

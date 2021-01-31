@@ -1,0 +1,43 @@
+﻿@page
+@model DisponibilidadHospitalaria.Pages.Ciudades.Instituciones.Index
+@{
+    ViewData["Title"] = "Instituciones";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item"><a asp-page="/Ciudades/Index">Ciudades</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="container p-3 my-3 bg-primary text-white">
+    <div class="d-flex justify-content-between">
+        <h5>@Model.Ciudad.Nombre</h5>
+        <span>@Model.Ciudad.Provincia_Nombre</span>
+    </div>
+</div>
+
+<div>
+    <div>
+        <a class="btn btn-link" asp-route-ciudadId="@Model.Ciudad.Id" asp-page="./CrearInstitucion">Agregar</a>
+    </div>
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th colspan="2">Nombre</th>
+                <th>Tipo de Unidad</th>
+                <th align="center">Capacidad</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Ciudad.Instituciones)
+        {
+            <partial name="_InstitucionPartialView" model="@item" />
+        }
+    </table>
+</div>
