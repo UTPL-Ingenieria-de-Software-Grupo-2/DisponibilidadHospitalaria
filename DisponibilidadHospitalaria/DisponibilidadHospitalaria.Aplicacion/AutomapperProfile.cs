@@ -21,6 +21,14 @@ namespace Aplicacion
             CreateMap<UsuarioAdministradorCreateUpdate.RequestModel, UsuarioAsignado>().ReverseMap();
             CreateMap<UsuarioAsignado, UsuarioAsignado>();
 
+            CreateMap<UsuarioAsignado, UsuarioAsignadoDto>()
+                .ForMember(x => x.Institucion_Nombre, o => o.MapFrom(s => s.Institucion.Nombre))
+                .ForMember(x => x.Institucion_Ciudad, o => o.MapFrom(s => s.Institucion.Ciudad.Nombre))
+                .ForMember(x => x.Institucion_Provincia, o => o.MapFrom(s => s.Institucion.Ciudad.Provincia.Nombre));
+
+            CreateMap<UsuarioAsignadoDto, UsuarioAsignadoCreateUpdate.RequestModel>();
+            CreateMap<UsuarioAsignadoCreateUpdate.RequestModel, UsuarioAsignado>().ReverseMap();
+
             CreateMap<Provincia, ProvinciaDto>();
 
             CreateMap<Ciudad, CiudadDto>()
