@@ -1,0 +1,33 @@
+﻿@model DisponibilidadHospitalaria.Pages.IndexModel.InputModel
+@{
+    var provincias = (List<ElgirInstitucionVM.Provincia>)ViewData["Provincias"];
+    var ciudades = (List<ElgirInstitucionVM.Ciudad>)ViewData["Ciudades"];
+}
+
+<div class="container p-3 my-3 bg-info text-white">
+    <form method="post" autocomplete="off">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-md-right text-sm-left">Provincia:</label>
+            <div class="col-sm-8">
+                <select id="pais" asp-for="ProvinciaId" class="form-control" onchange="this.form.submit()">
+                    @foreach (var item in provincias.OrderBy(x => x.Codigo).ToList())
+                    {
+                        <option value="@item.Id">@item.NombreLista</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-md-right text-sm-left">Ciudad:</label>
+            <div class="col-sm-8">
+                <select id="pais" asp-for="CiudadId" class="form-control" onchange="this.form.submit()">
+                    @foreach (var item in ciudades.OrderBy(x => x.Nombre).ToList())
+                    {
+                        <option value="@item.Id">@item.Nombre</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </form>
+
+</div>
