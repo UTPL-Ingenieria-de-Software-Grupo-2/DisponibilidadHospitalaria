@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Persistencia</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="InitialData\Provincias.json" />
+    <None Remove="InitialData\TiposDeInstitucion.json" />
+    <None Remove="InitialData\TiposDeUnidad.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="InitialData\TiposDeInstitucion.json" />
+    <EmbeddedResource Include="InitialData\TiposDeUnidad.json" />
+    <EmbeddedResource Include="InitialData\Provincias.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DisponibilidadHospitalaria.Dominio\DisponibilidadHospitalaria.Dominio.csproj" />
+  </ItemGroup>
+
+</Project>

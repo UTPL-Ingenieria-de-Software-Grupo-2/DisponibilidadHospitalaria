@@ -1,0 +1,98 @@
+﻿[
+  {
+    "Codigo": "01",
+    "Nombre": "Azuay"
+  },
+  {
+    "Codigo": "02",
+    "Nombre": "Bolívar"
+  },
+  {
+    "Codigo": "03",
+    "Nombre": "Cañar"
+  },
+  {
+    "Codigo": "04",
+    "Nombre": "Carchi"
+  },
+  {
+    "Codigo": "05",
+    "Nombre": "Cotopaxi"
+  },
+  {
+    "Codigo": "06",
+    "Nombre": "Chimborazo"
+  },
+  {
+    "Codigo": "07",
+    "Nombre": "El Oro"
+  },
+  {
+    "Codigo": "08",
+    "Nombre": "Esmeraldas"
+  },
+  {
+    "Codigo": "09",
+    "Nombre": "Guayas"
+  },
+  {
+    "Codigo": "10",
+    "Nombre": "Imbabura"
+  },
+  {
+    "Codigo": "11",
+    "Nombre": "Loja"
+  },
+  {
+    "Codigo": "12",
+    "Nombre": "Los Ríos"
+  },
+  {
+    "Codigo": "13",
+    "Nombre": "Manabí"
+  },
+  {
+    "Codigo": "14",
+    "Nombre": "Morona Santiago"
+  },
+  {
+    "Codigo": "15",
+    "Nombre": "Napo"
+  },
+  {
+    "Codigo": "16",
+    "Nombre": "Pastaza"
+  },
+  {
+    "Codigo": "17",
+    "Nombre": "Pichincha"
+  },
+  {
+    "Codigo": "18",
+    "Nombre": "Tungurahua"
+  },
+  {
+    "Codigo": "19",
+    "Nombre": "Zamora Chinchipe"
+  },
+  {
+    "Codigo": "20",
+    "Nombre": "Galápagos"
+  },
+  {
+    "Codigo": "21",
+    "Nombre": "Sucumbíos"
+  },
+  {
+    "Codigo": "22",
+    "Nombre": "Orellana"
+  },
+  {
+    "Codigo": "23",
+    "Nombre": "Santo Domingo de los Tsáchilas"
+  },
+  {
+    "Codigo": "24",
+    "Nombre": "Santa Elena"
+  }
+]
