@@ -133,3 +133,13 @@ System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Iden
 2021-01-31 03:35:25.530 -05:00 [INF] Sesión Iniciada. Usuario [admin@ainfo.ec]
 2021-01-31 03:35:33.794 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
 2021-01-31 03:36:13.534 -05:00 [INF] UsuarioAsignado Inserted [Id=0]
+2021-01-31 03:48:46.416 -05:00 [INF] Starting up
+2021-01-31 03:48:50.020 -05:00 [INF] Now listening on: http://127.0.0.1:5012
+2021-01-31 03:48:50.023 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-31 03:48:50.023 -05:00 [INF] Hosting environment: Development
+2021-01-31 03:48:50.023 -05:00 [INF] Content root path: D:\UTPL\TRABAJO Grupo 2\Vesion 5\DisponibilidadHospitalaria
+2021-01-31 03:49:49.039 -05:00 [INF] Usuario [digitador@ainfo.ec] creado
+2021-01-31 03:50:11.222 -05:00 [INF] Sesión Iniciada. Usuario [digitador@ainfo.ec]
+2021-01-31 03:50:16.847 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-01-31 03:50:23.936 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-01-31 03:50:30.473 -05:00 [INF] Disponibilidad Inserted [Id=0]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aplicacion.Disponibilidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,8 @@ namespace Aplicacion.Instituciones
         public string Denominacion { get; set; }
         public int Capacidad { get; set; }
         public string TipoDeUnidad { get; set; }
+
+        public List<DisponibilidadDto> UltimasDisponibilidades { get; set; }
+        public DisponibilidadDto UltimaDisponibilidad => UltimasDisponibilidades.FirstOrDefault() ?? new DisponibilidadDto();
     }
 }

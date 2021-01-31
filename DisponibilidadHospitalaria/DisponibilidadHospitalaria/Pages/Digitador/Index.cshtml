@@ -1,0 +1,30 @@
+﻿@page
+@model DisponibilidadHospitalaria.Pages.Digitador.IndexModel
+@{
+    ViewData["Title"] = "Disponibilidades";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="text-center">
+    <h3 class="display-4">@ViewData["Title"]</h3>
+</div>
+
+@if (Model.Instituciones.Count > 0)
+{
+    <div class="text-center">
+        <h3>@Model.Usuario.Nombre</h3>
+        <h3>@Model.Usuario.Email</h3>
+    </div>
+
+    <div>
+        <partial name="./_PresentarInstituciones" model="@Model" view-data="ViewData" />
+    </div>
+}

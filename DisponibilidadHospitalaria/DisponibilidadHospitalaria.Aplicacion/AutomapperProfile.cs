@@ -1,4 +1,5 @@
 ﻿using Aplicacion.Ciudades;
+using Aplicacion.Disponibilidades;
 using Aplicacion.Instituciones;
 using Aplicacion.Seguridad;
 using AutoMapper;
@@ -55,12 +56,17 @@ namespace Aplicacion
             CreateMap<TipoDeUnidad, TipoDeUnidadDto>().ReverseMap();
 
             CreateMap<Unidad, UnidadDto>()
-                .ForMember(x => x.TipoDeUnidad, o => o.MapFrom(s => s.TipoDeUnidad.Denominacion));
+                .ForMember(x => x.TipoDeUnidad, o => o.MapFrom(s => s.TipoDeUnidad.Denominacion))
+                .ForMember(x => x.UltimasDisponibilidades, o => o.MapFrom(s => s.Disponibilidades.OrderByDescending(d => d.Fecha).Take(1)));
 
             CreateMap<UnidadDto, UnidadCreateUpdate.RequestModel>();
             CreateMap<UnidadCreateUpdate.RequestModel, Unidad>().ReverseMap();
             CreateMap<Unidad, Unidad>();
 
+            CreateMap<Disponibilidad, DisponibilidadDto>();
+            CreateMap<DisponibilidadDto, DisponibilidadCreateUpdate.RequestModel>();
+            CreateMap<DisponibilidadCreateUpdate.RequestModel, Disponibilidad>().ReverseMap();
+            CreateMap<Disponibilidad, Disponibilidad>();
         }
     }
 }

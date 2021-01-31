@@ -40,6 +40,13 @@
                             </li>
                         }
 
+                        @if (User.IsInRole(AppConstants.DigitadorRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Digitador/Index">Digitador</a>
+                            </li>
+                        }
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
