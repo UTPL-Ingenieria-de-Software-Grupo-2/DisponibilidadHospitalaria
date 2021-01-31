@@ -95,3 +95,8 @@ System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Iden
 2021-01-31 01:46:58.375 -05:00 [INF] Application started. Press Ctrl+C to shut down.
 2021-01-31 01:46:58.375 -05:00 [INF] Hosting environment: Development
 2021-01-31 01:46:58.375 -05:00 [INF] Content root path: D:\UTPL\TRABAJO Grupo 2\Vesion 1\DisponibilidadHospitalaria
+2021-01-31 10:32:22.925 -05:00 [INF] Starting up
+2021-01-31 10:32:29.044 -05:00 [INF] Now listening on: http://127.0.0.1:11834
+2021-01-31 10:32:29.053 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-31 10:32:29.053 -05:00 [INF] Hosting environment: Development
+2021-01-31 10:32:29.054 -05:00 [INF] Content root path: C:\Users\carlo\source\repos\DisponibilidadHospitalaria\DisponibilidadHospitalaria\DisponibilidadHospitalaria
