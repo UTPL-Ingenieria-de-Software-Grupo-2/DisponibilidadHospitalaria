@@ -1,0 +1,56 @@
+﻿@page
+@model DisponibilidadHospitalaria.Pages.Usuarios.Master.IndexModel
+@{
+    ViewData["Title"] = "Usuarios Administradores";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="text-center">
+    <h3 class="display-4">@ViewData["Title"]</h3>
+</div>
+
+<div>
+    <a class="btn btn-primary btn-sm" title="Agregar nuevo registro" asp-page="./CrearEditarUsuarioAdministrador">Agregar</a>
+</div>
+<div>
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Activo</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Usuarios.OrderBy(x => x.Nombre))
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Email</td>
+                <td>
+                    <div class="d-flex justify-content-lg-center">
+                        @if (item.Activo)
+                        {
+                            <input type="checkbox" checked disabled>
+                        }
+                        else
+                        {
+                            <input type="checkbox" disabled>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-link" asp-page="./CrearEditarUsuarioAdministrador" asp-route-id="@item.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
